@@ -1,0 +1,46 @@
+Project Name: ServerSage
+
+Below is a basic outline of the PHP script that accomplishes the requirements for the ServerSage tool:
+
+Setup and Configuration:
+
+Create a MySQL database to store server and user information.
+Implement user registration and login functionality using PHP sessions.
+Use PDO for database interactions to prevent SQL injection.
+Dashboard and Server Overview:
+
+Upon login, users are redirected to the dashboard displaying an overview of registered servers.
+Display server status indicators (online/offline), resource usage, and uptime.
+Implement utilization charts using libraries like Chart.js to visualize server resources (CPU, memory).
+Server Management:
+
+Allow users to add, remove, and edit servers from the tool.
+Provide an option to register specific services (HTTP, FTP, SSH) running on each server.
+Remote Server Management:
+
+Implement functionalities for remote server management tasks, such as server restart, service restart, and file management.
+Use SSH (securely with proper authentication) to execute remote commands on the servers.
+Periodic Server Monitoring:
+
+Set up a cron job to periodically check server status (ping, port availability) and update the dashboard.
+Use ICMP ping and port scanning to check server availability and service status.
+Server Resource Usage:
+
+Utilize SNMP or SSH to retrieve server resource usage data (CPU, memory) from the registered servers.
+Visualize this data on the dashboard alongside other server details.
+Idempotency:
+
+Design the management tasks to be idempotent, meaning they can be safely repeated without adverse effects.
+Error Handling:
+
+Implement proper error handling for database queries and server communications.
+Log errors for debugging purposes.
+Database Table Verification:
+
+On application start, check if the required database table exists.
+If the table exists, display a message indicating that the database table is ready to receive task input.
+If the table doesn't exist, create it.
+User Authentication:
+
+Protect access to the tool by requiring users to authenticate before accessing the dashboard or management features.
+Use secure password hashing and salting techniques.
